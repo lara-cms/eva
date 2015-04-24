@@ -1,0 +1,21 @@
+{
+    "name": "lara-cms/eva",
+    "description": "PHP CMS model for Laravel",
+    "keywords": ["laravel", "cms", "controller", "template"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alex. Suroviy",
+            "email": "suroviy@bk.ru"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "LaraCms\\Eva\\": "src/"
+        }
+    },
+    "minimum-stability": "dev"  
+}
