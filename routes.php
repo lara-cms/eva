@@ -1,5 +1,5 @@
 <?php
-
+Cache::flush();
 //Debugbar::startMeasure('get_page','Получение страници');
 $page = Cache::remember('url_'.Request::path(), Config::get('lara-cms.master.life_cache'), function()
 {
