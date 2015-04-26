@@ -20,25 +20,8 @@ View::composer( Config( "lara-cms.master.template_composer.menu" ), function($vi
 
 View::composer( Config( "lara-cms.master.template_composer.list" ) , function($view)
 {
-    $menu = App\Menu::getActiveMenu();
-    
-    $cildMenus = $menu->leaves()->get();
-    $list = [];
-    $ids = [$menu->id];
-    $ids_not = ($menu->page_id) ? [$menu->page_id] : [];
-    foreach ($cildMenus as $val) 
-    {
-        $ids[] = $val->id;
-        if ($val->page_id)
-        {
-            $ids_not[] = $val->page_id;
-        }
-    }
-
-    if (sizeof($ids)>0)
-    {
-        $list = App\Page::whereIn('menu_id',$ids)->whereNotIn('id',$ids_not)->paginate(10);;
-    }
+    $page = new App\Page();
+    $list = $page->getParentFromMenu()->paginate(10);
     
     if ($list) {
         $list_pagin = [];
