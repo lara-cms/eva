@@ -7,7 +7,7 @@
         @foreach($list as $val)
             <article class="uk-comment">
             <header class="uk-comment-header">
-                <img class="uk-comment-avatar" src="" alt="">
+                <img class="uk-comment-avatar" src="/{{$val->getField('image')}}" alt="">
                 <h4 class="uk-comment-title">{{$val['title']}}</h4>
                 <div class="uk-comment-meta"><a href="/{{$val['url']}}">подробнее...</a></div>
             </header>
