@@ -1,5 +1,5 @@
 @extends('eva::layouts.master')
 
 @section('content')
-		[[ПУСТО]]
+	{!!$page->content!!}
 @stop

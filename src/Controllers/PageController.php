@@ -13,7 +13,12 @@ class PageController extends Controller {
     public function getPage ()
     {
         $page = Page::getConstantModel();
-        
+
+        if (!$page->active)
+        {
+            return abort(404);
+        }
+
         $template = Config('lara-cms.master.template');
 
         if (isset($template[$page->template]))
